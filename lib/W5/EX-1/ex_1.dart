@@ -53,7 +53,7 @@ class SelectableButtonState extends State<SelectableButton> {
   Color get textColor => isSelected ? Colors.white : Colors.black;
   Color? get bgColor => isSelected ? Colors.blue[500] : Colors.blue[50];
 
-  void _toggleSelected() {
+  void toggleSelected() {
     setState(() {
       isSelected = !isSelected;
     });
@@ -65,7 +65,7 @@ class SelectableButtonState extends State<SelectableButton> {
       width: widget.width,
       height: widget.height,
       child: ElevatedButton(
-        onPressed: _toggleSelected,
+        onPressed: toggleSelected,
         style: ElevatedButton.styleFrom(
           backgroundColor: bgColor,
         ),
