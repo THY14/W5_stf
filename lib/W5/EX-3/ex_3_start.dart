@@ -10,7 +10,7 @@ List<String> images = [
 
 void main() => runApp(
   MaterialApp(
-    debugShowCheckedModeBanner: false, // Why this line ? Can you explain it ?
+    debugShowCheckedModeBanner: true, // Why this line ? Can you explain it ?
     home: ImageViewerPage(),
   ),
 );
@@ -19,10 +19,10 @@ class ImageViewerPage extends StatefulWidget {
   const ImageViewerPage({super.key});
 
   @override
-  State<ImageViewerPage> createState() => _ImageViewerPageState();
+  State<ImageViewerPage> createState() => ImageViewerPageState();
 }
 
-class _ImageViewerPageState extends State<ImageViewerPage> {
+class ImageViewerPageState extends State<ImageViewerPage> {
   int currentIndex = 0;
   void nextButton() {
     setState(() {

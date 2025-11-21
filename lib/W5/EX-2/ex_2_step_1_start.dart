@@ -32,26 +32,26 @@ class FavoriteCard extends StatefulWidget {
   final bool initiallyFavorite;
 
   @override
-  State<FavoriteCard> createState() => _FavoriteCardState();
+  State<FavoriteCard> createState() => FavoriteCardState();
 }
 
-class _FavoriteCardState extends State<FavoriteCard> {
-  late bool _isFavorite;
+class FavoriteCardState extends State<FavoriteCard> {
+  late bool isFavorite;
 
   @override
   void initState() {
     super.initState();
-    _isFavorite = widget.initiallyFavorite;
+     isFavorite = widget.initiallyFavorite;
   }
 
-  // private getter 
-  Icon get _iconLabel => _isFavorite
+  //  getter 
+  Icon get iconLabel => isFavorite
       ? const Icon(Icons.favorite, color: Colors.red)
       : const Icon(Icons.favorite_border, color: Colors.grey);
 
-  void _onPressedFavorite() {
+  void onPressedFavorite() {
     setState(() {
-      _isFavorite = !_isFavorite;
+      isFavorite = !isFavorite;
     });
   }
 
@@ -83,9 +83,9 @@ class _FavoriteCardState extends State<FavoriteCard> {
             ),
           ),
           IconButton(
-            onPressed: _onPressedFavorite,
-            icon: _iconLabel,
-            tooltip: _isFavorite ? 'Remove from favorites' : 'Add to favorites',
+            onPressed: onPressedFavorite,
+            icon: iconLabel,
+            tooltip: isFavorite ? 'Remove from favorites' : 'Add to favorites',
           ),
         ],
       ),

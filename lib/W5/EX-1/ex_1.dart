@@ -42,10 +42,10 @@ class SelectableButton extends StatefulWidget {
   });
 
   @override
-  State<SelectableButton> createState() => _SelectableButtonState();
+  State<SelectableButton> createState() => SelectableButtonState();
 }
 
-class _SelectableButtonState extends State<SelectableButton> {
+class SelectableButtonState extends State<SelectableButton> {
   bool isSelected = false;
 
   // Getters 
